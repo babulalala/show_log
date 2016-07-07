@@ -2,4 +2,34 @@
 - I move this application from dct-tools to tools because I think it can be a regular shell tool.
 
 use case:
+1. $ bshowlog <= default log, setting in ~/showlog_list
+
+2. $ bshowlog data		<= tail -f data.log
+
+3. ~/showlog_list
+#log tag,log path,is default
+catalina,/xxx/xxx/xxx/catalina.out,1	<= 1 for default
+data,/xxx/xxx/xxx/data.log		<= ,0 or empty for no default
+...
+
+4. $ bshowlog -l	<= list log_list
+catalina	/xxx/xxx/catalina.out	(default)
+data		/xxx/xxx/data.log
+....
+
+5. It is better using bshowlog -e to edit showlog_list??
+or
+$ bshowlog -a <tag> <path> [default]
+=> list result
+(if tag exists => update)
+
+6. delete
+$ bshowlog -d <tag>	=> delete
+if tag is default, next is set to default
+
+-----
+/var/lib/pgsql/data/pg_log
+postgresql-Fri.log  postgresql-Sat.log  postgresql-Thu.log  postgresql-Wed.log
+postgresql-Mon.log  postgresql-Sun.log  postgresql-Tue.log
+
 

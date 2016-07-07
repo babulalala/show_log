@@ -2,7 +2,8 @@
 #
 # Script:
 # Description: Tail log for catalina.out or backup-restore.log
-# Date: 2016.05.09
+# Version: 1.0.1 (temp)
+# Date: 2016.07.07
 #
 
 script_name=`basename $0 .sh`
@@ -21,6 +22,7 @@ Options
 N/A             Default log is catalina.out
 -c		catalina.out
 -b		backup-restore.log
+-p		postgresql log
 -h              Show this help
 
 Example
@@ -37,6 +39,8 @@ case $1 in
 	-c) log='/var/log/tomcat6/catalina.out'
 	;;
 	-b) log='/var/log/oculan/backup-restore.log'
+	;;
+	-p) log='/var/lib/pgsql/data/pg_log/postgresql-Thu.log'
 	;;
 	-h) show_help
 	;;

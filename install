@@ -1,0 +1,10 @@
+#
+echo -n "cp bshowlog to /usr/local/bin .... "
+cp bshowlog /usr/local/bin
+result=$?
+if [ $result -eq 0 ];then
+	echo ok
+else
+	echo failed
+fi
+
