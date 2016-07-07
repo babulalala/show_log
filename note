@@ -1,0 +1,5 @@
+2016.07.07:
+- I move this application from dct-tools to tools because I think it can be a regular shell tool.
+
+use case:
+
